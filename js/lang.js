@@ -1,5 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
-   CHÂTEAU DES ROCHES — Language Switcher (EN / FR)
+   CHÂTEAU DES ROCHES — Language Switcher
+   Cross-browser: IE11+, Safari private mode safe localStorage
    ═══════════════════════════════════════════════════════════════ */
 
 (function () {
@@ -7,36 +8,42 @@
 
   var btnEN = document.getElementById('langEN');
   var btnFR = document.getElementById('langFR');
-  var currentLang = localStorage.getItem('cdr-lang') || 'en';
+  if (!btnEN || !btnFR) return;
 
-  /* Apply a language to every element that carries data-en / data-fr */
+  /* Safe localStorage — Safari private mode throws SecurityError */
+  function getStoredLang() {
+    try { return localStorage.getItem('cdr-lang') || 'en'; }
+    catch (e) { return 'en'; }
+  }
+  function setStoredLang(lang) {
+    try { localStorage.setItem('cdr-lang', lang); }
+    catch (e) { /* silent fail in private mode */ }
+  }
+
   function applyLang(lang) {
-    currentLang = lang;
-    localStorage.setItem('cdr-lang', lang);
-
     /* Update html lang attribute */
     document.documentElement.lang = lang;
 
-    /* Update flag button active states */
+    /* Update button active states */
     btnEN.classList.toggle('active', lang === 'en');
     btnFR.classList.toggle('active', lang === 'fr');
 
-    /* Swap all translatable text nodes */
+    /* Swap all translatable elements */
     var els = document.querySelectorAll('[data-en][data-fr]');
-    els.forEach(function (el) {
-      var text = el.getAttribute('data-' + lang);
-      if (text) {
-        /* Allow simple inline HTML like <em> in the translation strings */
-        el.innerHTML = text;
+    for (var i = 0; i < els.length; i++) {
+      var text = els[i].getAttribute('data-' + lang);
+      if (text !== null) {
+        els[i].innerHTML = text;
       }
-    });
+    }
+
+    setStoredLang(lang);
   }
 
-  /* Button click handlers */
   btnEN.addEventListener('click', function () { applyLang('en'); });
   btnFR.addEventListener('click', function () { applyLang('fr'); });
 
-  /* Apply saved or default language on page load */
-  applyLang(currentLang);
+  /* Apply on load */
+  applyLang(getStoredLang());
 
 })();
