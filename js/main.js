@@ -1,17 +1,20 @@
 /* ═══════════════════════════════════════════════════════════════
    CHÂTEAU DES ROCHES — Main JavaScript
+   Cross-browser: IE11+, Safari, Firefox, Chrome, mobile
    ═══════════════════════════════════════════════════════════════ */
 
 (function () {
   'use strict';
 
-  /* ── Custom Cursor ──────────────────────────────────────────── */
-  const cursor    = document.getElementById('cursor');
-  const cursorRing = document.getElementById('cursorRing');
+  /* ── Detect touch device ──────────────────────────────────── */
+  var isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
-  if (cursor && cursorRing) {
-    let mouseX = 0, mouseY = 0;
-    let ringX  = 0, ringY  = 0;
+  /* ── Custom Cursor (desktop only) ────────────────────────── */
+  var cursor     = document.getElementById('cursor');
+  var cursorRing = document.getElementById('cursorRing');
+
+  if (cursor && cursorRing && !isTouch) {
+    var mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
 
     document.addEventListener('mousemove', function (e) {
       mouseX = e.clientX;
@@ -20,7 +23,6 @@
       cursor.style.top  = mouseY + 'px';
     });
 
-    // Smooth ring follow
     function animateRing() {
       ringX += (mouseX - ringX) * 0.11;
       ringY += (mouseY - ringY) * 0.11;
@@ -30,21 +32,22 @@
     }
     animateRing();
 
-    // Hover states
     var interactives = document.querySelectorAll('a, button, .terroir-card, .note-card, .cuvee-bottle img');
-    interactives.forEach(function (el) {
-      el.addEventListener('mouseenter', function () {
-        cursor.classList.add('hover');
-        cursorRing.classList.add('hover');
-      });
-      el.addEventListener('mouseleave', function () {
-        cursor.classList.remove('hover');
-        cursorRing.classList.remove('hover');
-      });
-    });
+    for (var i = 0; i < interactives.length; i++) {
+      (function(el) {
+        el.addEventListener('mouseenter', function () {
+          cursor.classList.add('hover');
+          cursorRing.classList.add('hover');
+        });
+        el.addEventListener('mouseleave', function () {
+          cursor.classList.remove('hover');
+          cursorRing.classList.remove('hover');
+        });
+      })(interactives[i]);
+    }
   }
 
-  /* ── Sticky Navigation ──────────────────────────────────────── */
+  /* ── Sticky Navigation ──────────────────────────────────── */
   var nav = document.getElementById('nav');
   if (nav) {
     window.addEventListener('scroll', function () {
@@ -56,119 +59,103 @@
     }, { passive: true });
   }
 
-  /* ── Mobile Navigation Toggle ───────────────────────────────── */
+  /* ── Mobile Navigation Toggle ───────────────────────────── */
   var navToggle = document.getElementById('navToggle');
   var navLinks  = document.getElementById('navLinks');
 
   if (navToggle && navLinks) {
     navToggle.addEventListener('click', function () {
       var isOpen = navLinks.classList.toggle('open');
-      navToggle.setAttribute('aria-expanded', isOpen);
-      // Animate hamburger lines
+      navToggle.setAttribute('aria-expanded', String(isOpen));
       var spans = navToggle.querySelectorAll('span');
       if (isOpen) {
         spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
         spans[1].style.opacity   = '0';
         spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+        document.body.style.overflow = 'hidden'; // prevent scroll behind menu
       } else {
         spans[0].style.transform = '';
         spans[1].style.opacity   = '';
         spans[2].style.transform = '';
+        document.body.style.overflow = '';
       }
     });
 
-    // Close menu on link click
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
+    var navLinkItems = navLinks.querySelectorAll('a');
+    for (var j = 0; j < navLinkItems.length; j++) {
+      navLinkItems[j].addEventListener('click', function () {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
         var spans = navToggle.querySelectorAll('span');
         spans[0].style.transform = '';
         spans[1].style.opacity   = '';
         spans[2].style.transform = '';
+        document.body.style.overflow = '';
       });
+    }
+  }
+
+  /* ── Smooth Scroll (JS fallback for Safari < 15.4) ─────── */
+  function smoothScrollTo(targetY) {
+    var startY    = window.scrollY || window.pageYOffset;
+    var distance  = targetY - startY;
+    var duration  = 800;
+    var startTime = null;
+
+    function ease(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      var elapsed  = timestamp - startTime;
+      var progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + distance * ease(progress));
+      if (elapsed < duration) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  var anchors = document.querySelectorAll('a[href^="#"]');
+  for (var k = 0; k < anchors.length; k++) {
+    anchors[k].addEventListener('click', function (e) {
+      var href   = this.getAttribute('href');
+      var target = href === '#' ? document.body : document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      var navHeight = nav ? nav.offsetHeight : 0;
+      var targetTop = target.getBoundingClientRect().top + (window.scrollY || window.pageYOffset) - navHeight - 20;
+      smoothScrollTo(targetTop);
     });
   }
 
-  /* ── Scroll Reveal ──────────────────────────────────────────── */
+  /* ── Scroll Reveal ──────────────────────────────────────── */
   var revealElements = document.querySelectorAll('.reveal');
 
   if ('IntersectionObserver' in window) {
-    var revealObserver = new IntersectionObserver(function (entries) {
+    var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+          observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.1,
-      rootMargin: '0px 0px -40px 0px'
-    });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    revealElements.forEach(function (el) {
-      revealObserver.observe(el);
-    });
+    for (var m = 0; m < revealElements.length; m++) {
+      observer.observe(revealElements[m]);
+    }
   } else {
-    // Fallback: show all immediately
-    revealElements.forEach(function (el) {
-      el.classList.add('visible');
-    });
+    /* Fallback for IE11 / very old browsers — show everything immediately */
+    for (var n = 0; n < revealElements.length; n++) {
+      revealElements[n].classList.add('visible');
+    }
   }
 
-  /* ── Smooth Scroll for anchor links ────────────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        var navHeight = nav ? nav.offsetHeight : 0;
-        var targetTop = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
-        window.scrollTo({ top: targetTop, behavior: 'smooth' });
-      }
-    });
-  });
-
-  /* ── Contact Form ───────────────────────────────────────────── */
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var input = contactForm.querySelector('input[type="email"]');
-      var btn   = contactForm.querySelector('button');
-      var email = input ? input.value.trim() : '';
-
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        if (input) {
-          input.style.outline = '1px solid #E8540A';
-          input.focus();
-        }
-        return;
-      }
-
-      // Provide feedback
-      if (btn) {
-        btn.textContent = 'Sent ✓';
-        btn.style.background = '#1A1410';
-        btn.style.color = '#C9A96E';
-        btn.disabled = true;
-      }
-      if (input) {
-        input.value = '';
-        input.placeholder = 'Thank you — we will be in touch.';
-        input.style.outline = '';
-      }
-
-      // Note: wire this up to your email service (Mailchimp, Formspree, etc.)
-      console.log('Enquiry from:', email);
-    });
-  }
-
-  /* ── Parallax on hero bottle (subtle) ──────────────────────── */
+  /* ── Parallax on hero bottle (desktop only) ─────────────── */
   var heroBottle = document.querySelector('.hero-bottle');
-  if (heroBottle && window.innerWidth > 768) {
+  if (heroBottle && !isTouch && window.innerWidth > 768) {
     window.addEventListener('scroll', function () {
-      var scrolled = window.scrollY;
+      var scrolled = window.scrollY || window.pageYOffset;
       if (scrolled < window.innerHeight) {
         heroBottle.style.transform = 'translateY(' + (scrolled * 0.08) + 'px)';
       }
