@@ -409,15 +409,16 @@ nav.scrolled {
 .heritage-visual { position: relative; }
 .heritage-frame {
   position: relative;
-  aspect-ratio: 3 / 4;
-  border: 1px solid rgba(232, 84, 10, 0.15);
+  aspect-ratio: 4 / 3;
+  border: 1px solid rgba(232, 84, 10, 0.3);
   overflow: hidden;
+  box-shadow: 0 0 0 8px rgba(232, 84, 10, 0.06), 0 30px 80px rgba(13, 10, 7, 0.5);
 }
 .heritage-frame::before {
   content: '';
   position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(201, 169, 110, 0.2);
+  inset: 14px;
+  border: 1px solid rgba(201, 169, 110, 0.25);
   pointer-events: none;
   z-index: 3;
 }
@@ -425,9 +426,21 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 40%;
   display: block;
   transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Warm colour grade to match the Hermès orange / dark website palette:
+     - sepia adds amber warmth
+     - saturate boosts colour richness
+     - brightness pulls slightly darker (moody)
+     - hue-rotate shifts the cool-green vineyard tones toward amber/gold
+     - contrast adds punch */
+  filter:
+    sepia(28%)
+    saturate(1.25)
+    brightness(0.88)
+    hue-rotate(-8deg)
+    contrast(1.08);
 }
 .heritage-frame:hover .heritage-img {
   transform: scale(1.04);
@@ -437,9 +450,9 @@ nav.scrolled {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(13, 10, 7, 0.1) 0%,
-    rgba(13, 10, 7, 0.0) 40%,
-    rgba(13, 10, 7, 0.45) 100%
+    rgba(13, 10, 7, 0.08) 0%,
+    rgba(13, 10, 7, 0.0) 35%,
+    rgba(13, 10, 7, 0.55) 100%
   );
   z-index: 2;
 }
