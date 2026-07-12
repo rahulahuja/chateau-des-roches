@@ -410,36 +410,38 @@ nav.scrolled {
 .heritage-frame {
   position: relative;
   aspect-ratio: 3 / 4;
-  background: linear-gradient(135deg, rgba(232, 84, 10, 0.08), rgba(13, 10, 7, 0.8));
   border: 1px solid rgba(232, 84, 10, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 .heritage-frame::before {
   content: '';
   position: absolute;
   inset: 16px;
-  border: 1px solid rgba(201, 169, 110, 0.15);
+  border: 1px solid rgba(201, 169, 110, 0.2);
   pointer-events: none;
+  z-index: 3;
 }
-.heritage-frame-text { text-align: center; padding: 3rem; }
-.heritage-year {
-  font-family: var(--font-display);
-  font-size: 8rem;
-  font-weight: 300;
-  line-height: 1;
-  color: rgba(232, 84, 10, 0.15);
+.heritage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
   display: block;
-  margin-bottom: 1rem;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.heritage-frame-label {
-  font-family: var(--font-label);
-  font-size: 0.65rem;
-  letter-spacing: 0.4em;
-  color: var(--gold);
-  text-transform: uppercase;
+.heritage-frame:hover .heritage-img {
+  transform: scale(1.04);
+}
+.heritage-frame-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 10, 7, 0.1) 0%,
+    rgba(13, 10, 7, 0.0) 40%,
+    rgba(13, 10, 7, 0.45) 100%
+  );
+  z-index: 2;
 }
 .heritage-badge {
   position: absolute;
