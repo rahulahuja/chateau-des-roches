@@ -29,12 +29,36 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#heritage">Heritage</a></li>
-      <li><a href="#terroir">Terroir</a></li>
-      <li><a href="#cuvee">Our Cuvée</a></li>
-      <li><a href="#tasting">Tasting</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#heritage" data-en="Heritage" data-fr="Patrimoine">Heritage</a></li>
+      <li><a href="#terroir" data-en="Terroir" data-fr="Terroir">Terroir</a></li>
+      <li><a href="#cuvee" data-en="Our Cuvée" data-fr="Notre Cuvée">Our Cuvée</a></li>
+      <li><a href="#tasting" data-en="Tasting" data-fr="Dégustation">Tasting</a></li>
+      <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
     </ul>
+    <div class="lang-switcher">
+      <button class="lang-btn active" id="langEN" aria-label="Switch to English">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="28" height="14">
+          <clipPath id="uk-round"><rect width="60" height="30" rx="3"/></clipPath>
+          <g clip-path="url(#uk-round)">
+            <rect width="60" height="30" fill="#012169"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="4"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/>
+            <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/>
+          </g>
+        </svg>
+      </button>
+      <button class="lang-btn" id="langFR" aria-label="Passer en français">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 20" width="28" height="14">
+          <clipPath id="fr-round"><rect width="30" height="20" rx="3"/></clipPath>
+          <g clip-path="url(#fr-round)">
+            <rect width="10" height="20" fill="#002395"/>
+            <rect x="10" width="10" height="20" fill="#fff"/>
+            <rect x="20" width="10" height="20" fill="#ED2939"/>
+          </g>
+        </svg>
+      </button>
+    </div>
   </nav>
 
   <!-- ═══════════════════════════════════════ HERO -->
@@ -42,19 +66,19 @@
     <div class="hero-bg"></div>
     <div class="hero-lines"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Vaudelnay, Loire Valley</p>
+      <p class="hero-eyebrow" data-en="Vaudelnay, Loire Valley" data-fr="Vaudelnay, Vallée de la Loire">Vaudelnay, Loire Valley</p>
       <h1 class="hero-title">
         L'élégance<br>
         <em>à l'état pur</em>
       </h1>
-      <p class="hero-subtitle">Crémant de Loire · Méthode Traditionnelle</p>
-      <p class="hero-desc">
+      <p class="hero-subtitle" data-en="Crémant de Loire · Méthode Traditionnelle" data-fr="Crémant de Loire · Méthode Traditionnelle">Crémant de Loire · Méthode Traditionnelle</p>
+      <p class="hero-desc" data-en="Born from limestone soils five centuries in the making, aged on lees for a minimum of twenty-four months. A sparkling wine of extraordinary refinement." data-fr="Né de sols calcaires façonnés en cinq siècles, élevé sur lies pendant vingt-quatre mois minimum. Un vin effervescent d'une raffinement extraordinaire.">
         Born from limestone soils five centuries in the making,
         aged on lees for a minimum of twenty-four months.
         A sparkling wine of extraordinary refinement.
       </p>
       <a href="#cuvee" class="hero-cta">
-        <span>Discover the Cuvée</span>
+        <span data-en="Discover the Cuvée" data-fr="Découvrir la Cuvée">Discover the Cuvée</span>
         <span class="hero-cta-arrow">→</span>
       </a>
     </div>
@@ -63,7 +87,7 @@
     </div>
     <div class="scroll-indicator">
       <div class="scroll-line"></div>
-      <span>Scroll</span>
+      <span data-en="Scroll" data-fr="Défiler">Scroll</span>
     </div>
   </section>
 
@@ -71,15 +95,15 @@
   <section class="heritage" id="heritage">
     <div class="heritage-grid">
       <div class="reveal">
-        <p class="section-label">Established 15th Century</p>
-        <h2 class="section-title">A <em>château</em> with five centuries of history</h2>
-        <p class="section-body">
+        <p class="section-label" data-en="Established 15th Century" data-fr="Fondé au XVe Siècle">Established 15th Century</p>
+        <h2 class="section-title" data-en="A <em>château</em> with five centuries of history" data-fr="Un <em>château</em> aux cinq siècles d'histoire">A <em>château</em> with five centuries of history</h2>
+        <p class="section-body" data-en="Nestled at 137 Rue des Roches in the village of Vaudelnay, Château des Roches stands as a testament to the enduring legacy of Loire Valley viticulture. Its ancient stone walls, enclosing a meticulously maintained walled vineyard, have witnessed the passage of five hundred years of harvests." data-fr="Niché au 137 Rue des Roches dans le village de Vaudelnay, le Château des Roches témoigne de l'héritage durable de la viticulture ligérienne. Ses antiques murs de pierre, encerclant un vignoble clos méticuleusement entretenu, ont assisté au passage de cinq cents vendanges.">
           Nestled at 137 Rue des Roches in the village of Vaudelnay, Château des Roches
           stands as a testament to the enduring legacy of Loire Valley viticulture.
           Its ancient stone walls, enclosing a meticulously maintained walled vineyard,
           have witnessed the passage of five hundred years of harvests.
         </p>
-        <p class="section-body">
+        <p class="section-body" data-en="The château remains in private hands, entrusted to a family who understands that true luxury is not manufactured — it is inherited, cultivated, and patiently refined with each passing season." data-fr="Le château reste entre mains privées, confié à une famille qui comprend que le vrai luxe ne se fabrique pas — il s'hérite, se cultive et se perfectionne patiemment au fil des saisons.">
           The château remains in private hands, entrusted to a family who understands
           that true luxury is not manufactured — it is inherited, cultivated, and
           patiently refined with each passing season.
@@ -96,7 +120,7 @@
           <div class="heritage-frame-overlay"></div>
           <div class="heritage-badge">
             <strong>500+</strong>
-            <span>Years of<br>Heritage</span>
+            <span data-en="Years of Heritage" data-fr="Ans d'Histoire">Years of<br>Heritage</span>
           </div>
         </div>
       </div>
@@ -108,19 +132,19 @@
     <div class="stats-inner">
       <div class="stat-item reveal">
         <span class="stat-number">XV<sup>e</sup></span>
-        <span class="stat-label">Century Founded</span>
+        <span class="stat-label" data-en="Century Founded" data-fr="Siècle de Fondation">Century Founded</span>
       </div>
       <div class="stat-item reveal reveal-delay-1">
         <span class="stat-number">24<sup>+</sup></span>
-        <span class="stat-label">Months on Lees</span>
+        <span class="stat-label" data-en="Months on Lees" data-fr="Mois sur Lies">Months on Lees</span>
       </div>
       <div class="stat-item reveal reveal-delay-2">
         <span class="stat-number">100%</span>
-        <span class="stat-label">Hand Harvested</span>
+        <span class="stat-label" data-en="Hand Harvested" data-fr="Vendange Manuelle">Hand Harvested</span>
       </div>
       <div class="stat-item reveal reveal-delay-3">
         <span class="stat-number">2027</span>
-        <span class="stat-label">Organic Certification</span>
+        <span class="stat-label" data-en="Organic Certification" data-fr="Certification Bio">Organic Certification</span>
       </div>
     </div>
   </div>
@@ -129,9 +153,9 @@
   <section class="terroir" id="terroir">
     <div class="terroir-inner">
       <div class="terroir-header reveal">
-        <p class="section-label section-label--center">The Land Speaks</p>
-        <h2 class="section-title">A <em>terroir</em> unlike any other</h2>
-        <p class="section-body section-body--center">
+        <p class="section-label section-label--center" data-en="The Land Speaks" data-fr="La Terre Parle">The Land Speaks</p>
+        <h2 class="section-title" data-en="A <em>terroir</em> unlike any other" data-fr="Un <em>terroir</em> unique au monde">A <em>terroir</em> unlike any other</h2>
+        <p class="section-body section-body--center" data-en="The chalky limestone soils of Vaudelnay, shaped over millennia, impart a distinctive mineral signature to every bottle — a whisper of the earth rendered in fine, persistent bubbles." data-fr="Les sols calcaires crayeux de Vaudelnay, façonnés sur des millénaires, confèrent à chaque bouteille une signature minérale distincte — un murmure de la terre exprimé en bulles fines et persistantes.">
           The chalky limestone soils of Vaudelnay, shaped over millennia,
           impart a distinctive mineral signature to every bottle — a whisper
           of the earth rendered in fine, persistent bubbles.
@@ -140,8 +164,8 @@
       <div class="terroir-cards">
         <div class="terroir-card reveal">
           <span class="terroir-icon">🪨</span>
-          <h3 class="terroir-card-title">Limestone Soils</h3>
-          <p class="terroir-card-body">
+          <h3 class="terroir-card-title" data-en="Limestone Soils" data-fr="Sols Calcaires">Limestone Soils</h3>
+          <p class="terroir-card-body" data-en="The chalky tuffeau limestone that underlies Vaudelnay is the very soul of our wine. Ancient and mineral-rich, it endows each cuvée with a crisp, stony freshness and that unmistakable Loire saline finish." data-fr="Le tuffeau calcaire crayeux qui sous-tend Vaudelnay est l'âme même de notre vin. Ancien et riche en minéraux, il confère à chaque cuvée une fraîcheur croquante et pierreuse et cette finale saline inimitable de la Loire.">
             The chalky tuffeau limestone that underlies Vaudelnay is the very soul of our wine.
             Ancient and mineral-rich, it endows each cuvée with a crisp, stony freshness
             and that unmistakable Loire saline finish.
@@ -149,8 +173,8 @@
         </div>
         <div class="terroir-card reveal reveal-delay-1">
           <span class="terroir-icon">🍇</span>
-          <h3 class="terroir-card-title">Walled Vineyard</h3>
-          <p class="terroir-card-body">
+          <h3 class="terroir-card-title" data-en="Walled Vineyard" data-fr="Vignoble Clos">Walled Vineyard</h3>
+          <p class="terroir-card-body" data-en="Enclosed within ancient stone walls, our clos vineyard creates a singular microclimate — protecting the vines, concentrating warmth, and nurturing grapes of exceptional complexity and aromatic intensity." data-fr="Enclosed dans d'antiques murs de pierre, notre vignoble clos crée un microclimat singulier — protégeant les vignes, concentrant la chaleur et favorisant des raisins d'une complexité et d'une intensité aromatique exceptionnelles.">
             Enclosed within ancient stone walls, our clos vineyard creates a singular
             microclimate — protecting the vines, concentrating warmth, and nurturing
             grapes of exceptional complexity and aromatic intensity.
@@ -158,8 +182,8 @@
         </div>
         <div class="terroir-card reveal reveal-delay-2">
           <span class="terroir-icon">🌿</span>
-          <h3 class="terroir-card-title">Path to Organics</h3>
-          <p class="terroir-card-body">
+          <h3 class="terroir-card-title" data-en="Path to Organics" data-fr="En Route vers le Bio">Path to Organics</h3>
+          <p class="terroir-card-body" data-en="We are committed to the land that sustains us. With organic certification anticipated in 2027, our vineyards are cultivated in absolute harmony with nature — no synthetic treatments, only respect for the living soil." data-fr="Nous nous engageons envers la terre qui nous nourrit. La certification biologique étant attendue pour 2027, nos vignobles sont cultivés en parfaite harmonie avec la nature — sans traitements synthétiques, dans le seul respect du sol vivant.">
             We are committed to the land that sustains us. With organic certification
             anticipated in 2027, our vineyards are cultivated in absolute harmony
             with nature — no synthetic treatments, only respect for the living soil.
@@ -173,14 +197,14 @@
   <section class="process" id="process">
     <div class="process-inner">
       <div>
-        <p class="section-label reveal">La Méthode</p>
-        <h2 class="section-title reveal">The art of <em>patient</em> perfection</h2>
+        <p class="section-label reveal" data-en="La Méthode" data-fr="La Méthode">La Méthode</p>
+        <h2 class="section-title reveal" data-en="The art of <em>patient</em> perfection" data-fr="L'art de la perfection <em>patiente</em>">The art of <em>patient</em> perfection</h2>
         <div class="process-steps">
           <div class="process-step reveal">
             <span class="step-number">01</span>
             <div>
-              <p class="step-title">Hand Harvest</p>
-              <p class="step-body">
+              <p class="step-title" data-en="Hand Harvest" data-fr="Vendange Manuelle">Hand Harvest</p>
+              <p class="step-body" data-en="Every grape is selected and harvested by hand, bunch by bunch, in the cool of the early morning. No machine touches our vines. It is work of devotion, and its rewards are felt in every sip." data-fr="Chaque raisin est sélectionné et récolté à la main, grappe par grappe, dans la fraîcheur du petit matin. Aucune machine ne touche nos vignes. C'est un travail de dévotion, dont les fruits se ressentent à chaque gorgée.">
                 Every grape is selected and harvested by hand, bunch by bunch,
                 in the cool of the early morning. No machine touches our vines.
                 It is work of devotion, and its rewards are felt in every sip.
@@ -190,8 +214,8 @@
           <div class="process-step reveal reveal-delay-1">
             <span class="step-number">02</span>
             <div>
-              <p class="step-title">Méthode Traditionnelle</p>
-              <p class="step-body">
+              <p class="step-title" data-en="Méthode Traditionnelle" data-fr="Méthode Traditionnelle">Méthode Traditionnelle</p>
+              <p class="step-body" data-en="Our Crémant is crafted using the traditional method — the same painstaking process used for Champagne — ensuring bubbles of extraordinary finesse and a wine of incomparable depth." data-fr="Notre Crémant est élaboré selon la méthode traditionnelle — le même procédé minutieux utilisé pour le Champagne — garantissant des bulles d'une finesse extraordinaire et un vin d'une profondeur incomparable.">
                 Our Crémant is crafted using the traditional method — the same
                 painstaking process used for Champagne — ensuring bubbles of
                 extraordinary finesse and a wine of incomparable depth.
@@ -201,8 +225,8 @@
           <div class="process-step reveal reveal-delay-2">
             <span class="step-number">03</span>
             <div>
-              <p class="step-title">24 Months on Lees</p>
-              <p class="step-body">
+              <p class="step-title" data-en="24 Months on Lees" data-fr="24 Mois sur Lies">24 Months on Lees</p>
+              <p class="step-body" data-en="Resting on its lees for a minimum of twenty-four months — far exceeding AOC requirements — our wine develops a brioche richness, silky texture, and a persistent, creamy mousse that speaks of true patience." data-fr="Reposant sur ses lies pendant vingt-quatre mois minimum — bien au-delà des exigences de l'AOC — notre vin développe une richesse briochée, une texture soyeuse et une mousse persistante et crémeuse qui témoigne d'une véritable patience.">
                 Resting on its lees for a minimum of twenty-four months —
                 far exceeding AOC requirements — our wine develops a brioche
                 richness, silky texture, and a persistent, creamy mousse
@@ -214,17 +238,17 @@
       </div>
       <div class="process-visual reveal reveal-delay-1">
         <div class="process-quote-block">
-          <p class="process-quote">
+          <p class="process-quote" data-en='"Great wine is not made. It is allowed — by soil, by season, and by the unwavering discipline of those who dare to wait."' data-fr='"Le grand vin ne se fait pas. Il se permet — par le sol, par la saison et par la discipline indéfectible de ceux qui osent attendre."'>
             "Great wine is not made. It is allowed — by soil, by season,
             and by the unwavering discipline of those who dare to wait."
           </p>
-          <p class="process-quote-attr">— Château des Roches, Philosophy of Craft</p>
+          <p class="process-quote-attr" data-en="— Château des Roches, Philosophy of Craft" data-fr="— Château des Roches, Philosophie du Savoir-Faire">— Château des Roches, Philosophy of Craft</p>
         </div>
         <div class="organic-badge">
           <span class="organic-icon">🌱</span>
           <div class="organic-text">
-            <strong>Organic Certification Pending</strong>
-            <span>Projected for 2027 · In conversion since 2024</span>
+            <strong data-en="Organic Certification Pending" data-fr="Certification Bio en Cours">Organic Certification Pending</strong>
+            <span data-en="Projected for 2027 · In conversion since 2024" data-fr="Prévue pour 2027 · En conversion depuis 2024">Projected for 2027 · In conversion since 2024</span>
           </div>
         </div>
       </div>
@@ -238,46 +262,46 @@
         <img src="images/Chateau_des_Roches_Bottle.PNG" alt="Château des Roches Brut">
       </div>
       <div class="cuvee-info reveal reveal-delay-1">
-        <p class="section-label section-label--dark">Our Signature Cuvée</p>
+        <p class="section-label section-label--dark" data-en="Our Signature Cuvée" data-fr="Notre Cuvée Signature">Our Signature Cuvée</p>
         <h2 class="section-title section-title--dark">Château des Roches<br><em class="em--dark">Brut</em></h2>
-        <p class="section-body section-body--dark">
+        <p class="section-body section-body--dark" data-en="A Crémant de Loire of rare distinction. The nose reveals bright citrus blossom and green apple, evolving toward notes of toasted brioche and fresh hazelnut — the hallmarks of extended lees ageing." data-fr="Un Crémant de Loire d'une distinction rare. Le nez révèle des fleurs d'agrumes éclatantes et de la pomme verte, évoluant vers des notes de brioche grillée et de noisette fraîche — les marques d'un élevage prolongé sur lies.">
           A Crémant de Loire of rare distinction. The nose reveals bright
           citrus blossom and green apple, evolving toward notes of toasted
           brioche and fresh hazelnut — the hallmarks of extended lees ageing.
         </p>
-        <p class="section-body section-body--dark">
+        <p class="section-body section-body--dark" data-en="On the palate, the limestone soils assert themselves with a vibrant, mineral freshness, while the mousse — fine, persistent, almost imperceptible — elevates the experience to the extraordinary." data-fr="En bouche, les sols calcaires s'affirment avec une fraîcheur minérale vibrante, tandis que la mousse — fine, persistante, presque imperceptible — élève l'expérience vers l'extraordinaire.">
           On the palate, the limestone soils assert themselves with a vibrant,
           mineral freshness, while the mousse — fine, persistent, almost
           imperceptible — elevates the experience to the extraordinary.
         </p>
         <div class="cuvee-specs">
           <div class="spec-item">
-            <p class="spec-label">Appellation</p>
+            <p class="spec-label" data-en="Appellation" data-fr="Appellation">Appellation</p>
             <p class="spec-value">Crémant de Loire AOC</p>
           </div>
           <div class="spec-item">
-            <p class="spec-label">Style</p>
+            <p class="spec-label" data-en="Style" data-fr="Style">Style</p>
             <p class="spec-value">Brut</p>
           </div>
           <div class="spec-item">
-            <p class="spec-label">Method</p>
-            <p class="spec-value">Méthode Traditionnelle</p>
+            <p class="spec-label" data-en="Method" data-fr="Méthode">Method</p>
+            <p class="spec-value" data-en="Méthode Traditionnelle" data-fr="Méthode Traditionnelle">Méthode Traditionnelle</p>
           </div>
           <div class="spec-item">
-            <p class="spec-label">Lees Ageing</p>
-            <p class="spec-value">Minimum 24 Months</p>
+            <p class="spec-label" data-en="Lees Ageing" data-fr="Élevage sur Lies">Lees Ageing</p>
+            <p class="spec-value" data-en="Minimum 24 Months" data-fr="Minimum 24 Mois">Minimum 24 Months</p>
           </div>
           <div class="spec-item">
-            <p class="spec-label">Harvest</p>
-            <p class="spec-value">Hand Picked</p>
+            <p class="spec-label" data-en="Harvest" data-fr="Vendange">Harvest</p>
+            <p class="spec-value" data-en="Hand Picked" data-fr="Manuelle">Hand Picked</p>
           </div>
           <div class="spec-item">
-            <p class="spec-label">Soil</p>
-            <p class="spec-value">Limestone (Tuffeau)</p>
+            <p class="spec-label" data-en="Soil" data-fr="Sol">Soil</p>
+            <p class="spec-value" data-en="Limestone (Tuffeau)" data-fr="Calcaire (Tuffeau)">Limestone (Tuffeau)</p>
           </div>
         </div>
         <a href="#contact" class="cuvee-btn">
-          <span>Request Allocation</span>
+          <span data-en="Request Allocation" data-fr="Demander une Allocation">Request Allocation</span>
           <span>→</span>
         </a>
       </div>
@@ -288,20 +312,20 @@
   <section class="location" id="location">
     <div class="location-inner">
       <div class="reveal">
-        <p class="section-label">Find Us</p>
-        <h2 class="section-title">In the heart of<br>the <em>Loire Valley</em></h2>
-        <p class="section-body">
+        <p class="section-label" data-en="Find Us" data-fr="Nous Trouver">Find Us</p>
+        <h2 class="section-title" data-en="In the heart of<br>the <em>Loire Valley</em>" data-fr="Au cœur de<br>la <em>Vallée de la Loire</em>">In the heart of<br>the <em>Loire Valley</em></h2>
+        <p class="section-body" data-en="Château des Roches sits at the edge of the village of Vaudelnay, in the Maine-et-Loire department — a region long celebrated as the garden of France and home to some of its most distinguished wines." data-fr="Le Château des Roches est situé à l'orée du village de Vaudelnay, dans le département du Maine-et-Loire — une région longtemps célébrée comme le jardin de la France et berceau de certains de ses vins les plus illustres.">
           Château des Roches sits at the edge of the village of Vaudelnay,
           in the Maine-et-Loire department — a region long celebrated as
           the garden of France and home to some of its most distinguished wines.
         </p>
-        <p class="section-body">
+        <p class="section-body" data-en="Visits to the estate are available by private appointment only, offering an intimate experience of our cellars, vines, and the château itself — unchanged in character since the fifteenth century." data-fr="Les visites du domaine se font sur rendez-vous privé uniquement, offrant une expérience intime de nos caves, de nos vignes et du château lui-même — inchangé dans son caractère depuis le XVe siècle.">
           Visits to the estate are available by private appointment only,
           offering an intimate experience of our cellars, vines, and the
           château itself — unchanged in character since the fifteenth century.
         </p>
         <div class="location-address">
-          <p class="section-label">Address</p>
+          <p class="section-label" data-en="Address" data-fr="Adresse">Address</p>
           <address>
             137 Rue des Roches<br>
             Vaudelnay, France 49260
@@ -337,9 +361,9 @@
   <section class="tasting" id="tasting">
     <div class="tasting-inner">
       <div class="tasting-header reveal">
-        <p class="section-label section-label--center">The Experience</p>
-        <h2 class="section-title">Tasting <em>Notes</em></h2>
-        <p class="section-body section-body--center">
+        <p class="section-label section-label--center" data-en="The Experience" data-fr="L'Expérience">The Experience</p>
+        <h2 class="section-title" data-en="Tasting <em>Notes</em>" data-fr="Notes de <em>Dégustation</em>">Tasting <em>Notes</em></h2>
+        <p class="section-body section-body--center" data-en="A symphony of aromas and flavours, each rooted in the ancient limestone soils of Vaudelnay and shaped by time." data-fr="Une symphonie d'arômes et de saveurs, ancrés dans les sols calcaires ancestraux de Vaudelnay et façonnés par le temps.">
           A symphony of aromas and flavours, each rooted in the ancient limestone
           soils of Vaudelnay and shaped by time.
         </p>
@@ -347,28 +371,28 @@
       <div class="tasting-wheel">
         <div class="note-card reveal">
           <span class="note-emoji">🍋</span>
-          <span class="note-name">Citrus Blossom</span>
-          <span class="note-type">Floral</span>
+          <span class="note-name" data-en="Citrus Blossom" data-fr="Fleur d'Agrumes">Citrus Blossom</span>
+          <span class="note-type" data-en="Floral" data-fr="Floral">Floral</span>
         </div>
         <div class="note-card reveal reveal-delay-1">
           <span class="note-emoji">🍏</span>
-          <span class="note-name">Green Apple</span>
-          <span class="note-type">Fresh Fruit</span>
+          <span class="note-name" data-en="Green Apple" data-fr="Pomme Verte">Green Apple</span>
+          <span class="note-type" data-en="Fresh Fruit" data-fr="Fruit Frais">Fresh Fruit</span>
         </div>
         <div class="note-card reveal reveal-delay-2">
           <span class="note-emoji">🥐</span>
-          <span class="note-name">Toasted Brioche</span>
-          <span class="note-type">Lees Character</span>
+          <span class="note-name" data-en="Toasted Brioche" data-fr="Brioche Grillée">Toasted Brioche</span>
+          <span class="note-type" data-en="Lees Character" data-fr="Caractère de Lies">Lees Character</span>
         </div>
         <div class="note-card reveal reveal-delay-3">
           <span class="note-emoji">🪨</span>
-          <span class="note-name">Wet Stone</span>
-          <span class="note-type">Mineral</span>
+          <span class="note-name" data-en="Wet Stone" data-fr="Pierre Mouillée">Wet Stone</span>
+          <span class="note-type" data-en="Mineral" data-fr="Minéral">Mineral</span>
         </div>
         <div class="note-card reveal reveal-delay-4">
           <span class="note-emoji">🌊</span>
-          <span class="note-name">Saline Finish</span>
-          <span class="note-type">Terroir</span>
+          <span class="note-name" data-en="Saline Finish" data-fr="Finale Saline">Saline Finish</span>
+          <span class="note-type" data-en="Terroir" data-fr="Terroir">Terroir</span>
         </div>
       </div>
     </div>
@@ -377,9 +401,9 @@
   <!-- ═══════════════════════════════════════ CONTACT -->
   <section class="contact" id="contact">
     <div class="contact-inner">
-      <p class="section-label section-label--center reveal">Private Enquiries</p>
-      <h2 class="contact-title reveal">Reserve your<br><em>allocation</em></h2>
-      <p class="contact-body reveal">
+      <p class="section-label section-label--center reveal" data-en="Private Enquiries" data-fr="Demandes Privées">Private Enquiries</p>
+      <h2 class="contact-title reveal" data-en="Reserve your<br><em>allocation</em>" data-fr="Réservez votre<br><em>allocation</em>">Reserve your<br><em>allocation</em></h2>
+      <p class="contact-body reveal" data-en="Château des Roches is produced in strictly limited quantities. To enquire about private allocations, cellar visits, or wholesale partnerships, please write to us directly and our maître de chai will be in touch." data-fr="Le Château des Roches est produit en quantités strictement limitées. Pour toute demande d'allocations privées, de visites de cave ou de partenariats en gros, veuillez nous écrire directement et notre maître de chai vous contactera.">
         Château des Roches is produced in strictly limited quantities.
         To enquire about private allocations, cellar visits, or wholesale partnerships,
         please write to us directly and our maître de chai will be in touch.
@@ -402,10 +426,10 @@
       Vaudelnay · Maine-et-Loire · France
     </div>
     <ul class="footer-links">
-      <li><a href="#heritage">Heritage</a></li>
-      <li><a href="#terroir">Terroir</a></li>
-      <li><a href="#cuvee">Cuvée</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#heritage" data-en="Heritage" data-fr="Patrimoine">Heritage</a></li>
+      <li><a href="#terroir" data-en="Terroir" data-fr="Terroir">Terroir</a></li>
+      <li><a href="#cuvee" data-en="Cuvée" data-fr="Cuvée">Cuvée</a></li>
+      <li><a href="#contact" data-en="Contact" data-fr="Contact">Contact</a></li>
     </ul>
     <div class="footer-social">
       <a href="https://www.instagram.com/chateaudesroches" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-link">
@@ -417,9 +441,10 @@
         <span>TikTok</span>
       </a>
     </div>
-    <p class="footer-copy">© 2025 Château des Roches · All rights reserved</p>
+    <p class="footer-copy" data-en="© 2025 Château des Roches · All rights reserved" data-fr="© 2025 Château des Roches · Tous droits réservés">© 2025 Château des Roches · All rights reserved</p>
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/lang.js"></script>
 </body>
 </html>
