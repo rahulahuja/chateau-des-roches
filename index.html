@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Château des Roches — Crémant de Loire. A 15th-century privately owned estate producing exquisite Brut Crémant de Loire by méthode traditionnelle from limestone soils in Vaudelnay, France.">
+  <meta name="keywords" content="Crémant de Loire, Château des Roches, Vaudelnay, sparkling wine, méthode traditionnelle, Loire Valley">
+  <meta property="og:title" content="Château des Roches — Crémant de Loire">
+  <meta property="og:description" content="Born from limestone soils five centuries in the making, aged on lees for a minimum of twenty-four months.">
+  <meta property="og:image" content="images/Chateau_des_Roches_Bottle.PNG">
+  <title>Château des Roches — Crémant de Loire</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Cinzel:wght@300;400;500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- ═══════════════════════════════════════ NAVIGATION -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      Château des
+      <span>Roches</span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#heritage">Heritage</a></li>
+      <li><a href="#terroir">Terroir</a></li>
+      <li><a href="#cuvee">Our Cuvée</a></li>
+      <li><a href="#tasting">Tasting</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Vaudelnay, Loire Valley</p>
+      <h1 class="hero-title">
+        L'élégance<br>
+        <em>à l'état pur</em>
+      </h1>
+      <p class="hero-subtitle">Crémant de Loire · Méthode Traditionnelle</p>
+      <p class="hero-desc">
+        Born from limestone soils five centuries in the making,
+        aged on lees for a minimum of twenty-four months.
+        A sparkling wine of extraordinary refinement.
+      </p>
+      <a href="#cuvee" class="hero-cta">
+        <span>Discover the Cuvée</span>
+        <span class="hero-cta-arrow">→</span>
+      </a>
+    </div>
+    <div class="hero-bottle">
+      <img src="images/Chateau_des_Roches_Bottle.PNG" alt="Château des Roches Brut Crémant de Loire">
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ HERITAGE -->
+  <section class="heritage" id="heritage">
+    <div class="heritage-grid">
+      <div class="reveal">
+        <p class="section-label">Established 15th Century</p>
+        <h2 class="section-title">A <em>château</em> with five centuries of history</h2>
+        <p class="section-body">
+          Nestled at 137 Rue des Roches in the village of Vaudelnay, Château des Roches
+          stands as a testament to the enduring legacy of Loire Valley viticulture.
+          Its ancient stone walls, enclosing a meticulously maintained walled vineyard,
+          have witnessed the passage of five hundred years of harvests.
+        </p>
+        <p class="section-body">
+          The château remains in private hands, entrusted to a family who understands
+          that true luxury is not manufactured — it is inherited, cultivated, and
+          patiently refined with each passing season.
+        </p>
+        <div class="divider">
+          <div class="divider-line"></div>
+          <div class="divider-icon"></div>
+          <div class="divider-line"></div>
+        </div>
+      </div>
+      <div class="heritage-visual reveal reveal-delay-2">
+        <div class="heritage-frame">
+          <div class="heritage-frame-text">
+            <span class="heritage-year">XV</span>
+            <span class="heritage-frame-label">Siècle</span>
+          </div>
+        </div>
+        <div class="heritage-badge">
+          <strong>500+</strong>
+          <span>Years of<br>Heritage</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ STATS -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat-item reveal">
+        <span class="stat-number">XV<sup>e</sup></span>
+        <span class="stat-label">Century Founded</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-1">
+        <span class="stat-number">24<sup>+</sup></span>
+        <span class="stat-label">Months on Lees</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-2">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Hand Harvested</span>
+      </div>
+      <div class="stat-item reveal reveal-delay-3">
+        <span class="stat-number">2027</span>
+        <span class="stat-label">Organic Certification</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ TERROIR -->
+  <section class="terroir" id="terroir">
+    <div class="terroir-inner">
+      <div class="terroir-header reveal">
+        <p class="section-label section-label--center">The Land Speaks</p>
+        <h2 class="section-title">A <em>terroir</em> unlike any other</h2>
+        <p class="section-body section-body--center">
+          The chalky limestone soils of Vaudelnay, shaped over millennia,
+          impart a distinctive mineral signature to every bottle — a whisper
+          of the earth rendered in fine, persistent bubbles.
+        </p>
+      </div>
+      <div class="terroir-cards">
+        <div class="terroir-card reveal">
+          <span class="terroir-icon">🪨</span>
+          <h3 class="terroir-card-title">Limestone Soils</h3>
+          <p class="terroir-card-body">
+            The chalky tuffeau limestone that underlies Vaudelnay is the very soul of our wine.
+            Ancient and mineral-rich, it endows each cuvée with a crisp, stony freshness
+            and that unmistakable Loire saline finish.
+          </p>
+        </div>
+        <div class="terroir-card reveal reveal-delay-1">
+          <span class="terroir-icon">🍇</span>
+          <h3 class="terroir-card-title">Walled Vineyard</h3>
+          <p class="terroir-card-body">
+            Enclosed within ancient stone walls, our clos vineyard creates a singular
+            microclimate — protecting the vines, concentrating warmth, and nurturing
+            grapes of exceptional complexity and aromatic intensity.
+          </p>
+        </div>
+        <div class="terroir-card reveal reveal-delay-2">
+          <span class="terroir-icon">🌿</span>
+          <h3 class="terroir-card-title">Path to Organics</h3>
+          <p class="terroir-card-body">
+            We are committed to the land that sustains us. With organic certification
+            anticipated in 2027, our vineyards are cultivated in absolute harmony
+            with nature — no synthetic treatments, only respect for the living soil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PROCESS -->
+  <section class="process" id="process">
+    <div class="process-inner">
+      <div>
+        <p class="section-label reveal">La Méthode</p>
+        <h2 class="section-title reveal">The art of <em>patient</em> perfection</h2>
+        <div class="process-steps">
+          <div class="process-step reveal">
+            <span class="step-number">01</span>
+            <div>
+              <p class="step-title">Hand Harvest</p>
+              <p class="step-body">
+                Every grape is selected and harvested by hand, bunch by bunch,
+                in the cool of the early morning. No machine touches our vines.
+                It is work of devotion, and its rewards are felt in every sip.
+              </p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-delay-1">
+            <span class="step-number">02</span>
+            <div>
+              <p class="step-title">Méthode Traditionnelle</p>
+              <p class="step-body">
+                Our Crémant is crafted using the traditional method — the same
+                painstaking process used for Champagne — ensuring bubbles of
+                extraordinary finesse and a wine of incomparable depth.
+              </p>
+            </div>
+          </div>
+          <div class="process-step reveal reveal-delay-2">
+            <span class="step-number">03</span>
+            <div>
+              <p class="step-title">24 Months on Lees</p>
+              <p class="step-body">
+                Resting on its lees for a minimum of twenty-four months —
+                far exceeding AOC requirements — our wine develops a brioche
+                richness, silky texture, and a persistent, creamy mousse
+                that speaks of true patience.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="process-visual reveal reveal-delay-1">
+        <div class="process-quote-block">
+          <p class="process-quote">
+            "Great wine is not made. It is allowed — by soil, by season,
+            and by the unwavering discipline of those who dare to wait."
+          </p>
+          <p class="process-quote-attr">— Château des Roches, Philosophy of Craft</p>
+        </div>
+        <div class="organic-badge">
+          <span class="organic-icon">🌱</span>
+          <div class="organic-text">
+            <strong>Organic Certification Pending</strong>
+            <span>Projected for 2027 · In conversion since 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CUVÉE -->
+  <section class="cuvee" id="cuvee">
+    <div class="cuvee-inner">
+      <div class="cuvee-bottle reveal">
+        <img src="images/Chateau_des_Roches_Bottle.PNG" alt="Château des Roches Brut">
+      </div>
+      <div class="cuvee-info reveal reveal-delay-1">
+        <p class="section-label section-label--dark">Our Signature Cuvée</p>
+        <h2 class="section-title section-title--dark">Château des Roches<br><em class="em--dark">Brut</em></h2>
+        <p class="section-body section-body--dark">
+          A Crémant de Loire of rare distinction. The nose reveals bright
+          citrus blossom and green apple, evolving toward notes of toasted
+          brioche and fresh hazelnut — the hallmarks of extended lees ageing.
+        </p>
+        <p class="section-body section-body--dark">
+          On the palate, the limestone soils assert themselves with a vibrant,
+          mineral freshness, while the mousse — fine, persistent, almost
+          imperceptible — elevates the experience to the extraordinary.
+        </p>
+        <div class="cuvee-specs">
+          <div class="spec-item">
+            <p class="spec-label">Appellation</p>
+            <p class="spec-value">Crémant de Loire AOC</p>
+          </div>
+          <div class="spec-item">
+            <p class="spec-label">Style</p>
+            <p class="spec-value">Brut</p>
+          </div>
+          <div class="spec-item">
+            <p class="spec-label">Method</p>
+            <p class="spec-value">Méthode Traditionnelle</p>
+          </div>
+          <div class="spec-item">
+            <p class="spec-label">Lees Ageing</p>
+            <p class="spec-value">Minimum 24 Months</p>
+          </div>
+          <div class="spec-item">
+            <p class="spec-label">Harvest</p>
+            <p class="spec-value">Hand Picked</p>
+          </div>
+          <div class="spec-item">
+            <p class="spec-label">Soil</p>
+            <p class="spec-value">Limestone (Tuffeau)</p>
+          </div>
+        </div>
+        <a href="#contact" class="cuvee-btn">
+          <span>Request Allocation</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ LOCATION -->
+  <section class="location" id="location">
+    <div class="location-inner">
+      <div class="reveal">
+        <p class="section-label">Find Us</p>
+        <h2 class="section-title">In the heart of<br>the <em>Loire Valley</em></h2>
+        <p class="section-body">
+          Château des Roches sits at the edge of the village of Vaudelnay,
+          in the Maine-et-Loire department — a region long celebrated as
+          the garden of France and home to some of its most distinguished wines.
+        </p>
+        <p class="section-body">
+          Visits to the estate are available by private appointment only,
+          offering an intimate experience of our cellars, vines, and the
+          château itself — unchanged in character since the fifteenth century.
+        </p>
+        <div class="location-address">
+          <p class="section-label">Address</p>
+          <address>
+            137 Rue des Roches<br>
+            Vaudelnay, France 49260
+          </address>
+        </div>
+      </div>
+      <div class="map-placeholder reveal reveal-delay-1">
+        <div class="loire-lines"></div>
+        <div class="map-pin-area">
+          <span class="map-pin">📍</span>
+          <p class="map-address">
+            137 Rue des Roches<br>
+            Vaudelnay, 49260<br>
+            Maine-et-Loire, France
+          </p>
+        </div>
+        <span class="map-overlay-text">Loire Valley · France</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ TASTING -->
+  <section class="tasting" id="tasting">
+    <div class="tasting-inner">
+      <div class="tasting-header reveal">
+        <p class="section-label section-label--center">The Experience</p>
+        <h2 class="section-title">Tasting <em>Notes</em></h2>
+        <p class="section-body section-body--center">
+          A symphony of aromas and flavours, each rooted in the ancient limestone
+          soils of Vaudelnay and shaped by time.
+        </p>
+      </div>
+      <div class="tasting-wheel">
+        <div class="note-card reveal">
+          <span class="note-emoji">🍋</span>
+          <span class="note-name">Citrus Blossom</span>
+          <span class="note-type">Floral</span>
+        </div>
+        <div class="note-card reveal reveal-delay-1">
+          <span class="note-emoji">🍏</span>
+          <span class="note-name">Green Apple</span>
+          <span class="note-type">Fresh Fruit</span>
+        </div>
+        <div class="note-card reveal reveal-delay-2">
+          <span class="note-emoji">🥐</span>
+          <span class="note-name">Toasted Brioche</span>
+          <span class="note-type">Lees Character</span>
+        </div>
+        <div class="note-card reveal reveal-delay-3">
+          <span class="note-emoji">🪨</span>
+          <span class="note-name">Wet Stone</span>
+          <span class="note-type">Mineral</span>
+        </div>
+        <div class="note-card reveal reveal-delay-4">
+          <span class="note-emoji">🌊</span>
+          <span class="note-name">Saline Finish</span>
+          <span class="note-type">Terroir</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <p class="section-label section-label--center reveal">Private Enquiries</p>
+      <h2 class="contact-title reveal">Reserve your<br><em>allocation</em></h2>
+      <p class="contact-body reveal">
+        Château des Roches is produced in strictly limited quantities.
+        To enquire about private allocations, cellar visits, or wholesale partnerships,
+        please leave your address below and our maître de chai will be in touch.
+      </p>
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+        <button type="submit">Enquire</button>
+      </form>
+      <p class="contact-detail reveal">
+        Or write to us at <a href="mailto:contact@chateaudesroches.fr">contact@chateaudesroches.fr</a>
+      </p>
+      <p class="contact-detail reveal" style="margin-top:0.5rem;">
+        137 Rue des Roches, Vaudelnay, France 49260
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ FOOTER -->
+  <footer>
+    <div class="footer-logo">
+      <strong>Château des Roches</strong>
+      Vaudelnay · Maine-et-Loire · France
+    </div>
+    <ul class="footer-links">
+      <li><a href="#heritage">Heritage</a></li>
+      <li><a href="#terroir">Terroir</a></li>
+      <li><a href="#cuvee">Cuvée</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p class="footer-copy">© 2025 Château des Roches · All rights reserved</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
