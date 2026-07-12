@@ -219,6 +219,7 @@ nav.scrolled {
   padding: 0.4rem 0.6rem;
   position: relative;
   transition: color 0.3s ease;
+  text-decoration: none; /* remove browser underline on <a> tags */
 }
 .lang-btn::after {
   content: '';
@@ -234,7 +235,7 @@ nav.scrolled {
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
 }
-.lang-btn:hover { color: rgba(250, 246, 240, 0.65); }
+.lang-btn:hover { color: rgba(250, 246, 240, 0.65); text-decoration: none; }
 .lang-btn.active { color: #E8540A; color: var(--orange); }
 .lang-btn.active::after { -webkit-transform: scaleX(1); transform: scaleX(1); }
 .lang-divider {
