@@ -1075,7 +1075,7 @@ footer {
 .lang-switcher {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0;
   margin-left: 2.5rem;
   padding-left: 2rem;
   border-left: 1px solid rgba(232, 84, 10, 0.2);
@@ -1083,69 +1083,43 @@ footer {
 .lang-btn {
   background: none;
   border: none;
-  padding: 0.3rem 0.5rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-.lang-flag {
-  font-size: 0.85rem;
-  line-height: 1;
-  opacity: 0.5;
-  transition: opacity 0.3s ease;
-  /* Desaturate flags to match the dark palette — full colour only when active */
-  filter: saturate(0.2) brightness(0.8);
-}
-.lang-label {
   font-family: var(--font-label);
-  font-size: 0.55rem;
-  letter-spacing: 0.3em;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: rgba(250, 246, 240, 0.35);
+  color: rgba(250, 246, 240, 0.3);
+  padding: 0.4rem 0.6rem;
+  position: relative;
   transition: color 0.3s ease;
 }
-/* Subtle underline that grows in on hover/active */
 .lang-btn::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0.5rem;
-  right: 0.5rem;
+  bottom: 0;
+  left: 0.6rem;
+  right: 0.6rem;
   height: 1px;
   background: var(--orange);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
   transform-origin: left;
+  transition: transform 0.3s ease;
 }
-.lang-btn:hover .lang-flag {
-  filter: saturate(0.6) brightness(0.9);
-  opacity: 0.75;
-}
-.lang-btn:hover .lang-label {
+.lang-btn:hover {
   color: rgba(250, 246, 240, 0.65);
 }
-.lang-btn:hover::after {
-  transform: scaleX(0.6);
-}
-/* Active state — full colour flag, orange label, full underline */
-.lang-btn.active .lang-flag {
-  filter: saturate(1) brightness(1);
-  opacity: 1;
-}
-.lang-btn.active .lang-label {
+.lang-btn.active {
   color: var(--orange);
 }
 .lang-btn.active::after {
   transform: scaleX(1);
 }
 .lang-divider {
-  font-family: var(--font-label);
-  font-size: 0.5rem;
-  color: rgba(232, 84, 10, 0.2);
-  user-select: none;
+  width: 1px;
+  height: 12px;
+  background: rgba(232, 84, 10, 0.2);
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
@@ -1159,9 +1133,8 @@ footer {
     background: rgba(13, 10, 7, 0.92);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    padding: 0.5rem 0.8rem;
+    padding: 0.4rem 0.2rem;
     border: 1px solid rgba(232, 84, 10, 0.15);
     z-index: 200;
-    gap: 0.3rem;
   }
 }
