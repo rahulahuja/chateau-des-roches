@@ -852,8 +852,13 @@ footer {
     margin-bottom: 2.5rem;
   }
   .hero-eyebrow { margin-bottom: 1.2rem; }
-  /* Hide bottle in hero on mobile — shown in its own section below */
-  .hero-bottle { display: none; }
+  /* On mobile: take bottle completely out of absolute positioning
+     so it cannot overlap text. Rendered via .mobile-bottle div instead. */
+  .hero-bottle {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
   .scroll-indicator { left: 1.5rem; }
   .heritage-grid,
   .process-inner,
