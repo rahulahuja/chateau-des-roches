@@ -33,6 +33,17 @@
       window.location.replace('/en/');
     }
   </script>
+  <!-- ═══ GOOGLE ANALYTICS ════════════════════════════════════ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HRVBJQRHKJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HRVBJQRHKJ', {
+      'anonymize_ip': true,
+      'cookie_flags': 'SameSite=None;Secure'
+    });
+  </script>
 </head>
 <body>
   <p>Redirecting… / Redirection en cours…</p>
