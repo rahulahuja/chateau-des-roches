@@ -25,6 +25,22 @@
   --transition-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* ── Visibility utilities ──────────────────────────────────── */
+.desktop-only {
+  display: block; /* shown on desktop */
+}
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    clip: rect(0,0,0,0) !important;
+    pointer-events: none !important;
+  }
+}
+
 /* ── Reset ─────────────────────────────────────────────────── */
 *, *::before, *::after {
   margin: 0;
@@ -852,12 +868,9 @@ footer {
     margin-bottom: 2.5rem;
   }
   .hero-eyebrow { margin-bottom: 1.2rem; }
-  /* On mobile: take bottle completely out of absolute positioning
-     so it cannot overlap text. Rendered via .mobile-bottle div instead. */
+  /* Belt-and-braces: also hide .hero-bottle directly */
   .hero-bottle {
     display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
   }
   .scroll-indicator { left: 1.5rem; }
   .heritage-grid,
