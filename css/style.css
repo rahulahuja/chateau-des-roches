@@ -511,6 +511,34 @@ nav.scrolled {
   flex-shrink: 0;
 }
 
+/* ── Mobile Bottle Section ──────────────────────────────────── */
+.mobile-bottle {
+  display: none;
+}
+@media (max-width: 768px) {
+  .mobile-bottle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #0D0A07;
+    background: var(--dark);
+    padding: 3rem 2rem 4rem;
+  }
+  .mobile-bottle img {
+    height: 55vh;
+    max-height: 480px;
+    width: auto;
+    -webkit-filter: drop-shadow(0 20px 60px rgba(232, 84, 10, 0.2));
+    filter: drop-shadow(0 20px 60px rgba(232, 84, 10, 0.2));
+  }
+}
+
 /* ── Heritage ───────────────────────────────────────────────── */
 .heritage { padding: 10rem 4rem; background: #1A1410; background: var(--charcoal); overflow: hidden; }
 .heritage-grid {
@@ -807,7 +835,6 @@ footer {
   .hero-content {
     max-width: 100%;
     padding: 0 1.5rem;
-    /* Push below fixed nav (approx 70px) without fighting flexbox centering */
     margin-top: -4rem;
     position: relative;
     z-index: 2;
@@ -825,7 +852,8 @@ footer {
     margin-bottom: 2.5rem;
   }
   .hero-eyebrow { margin-bottom: 1.2rem; }
-  .hero-bottle { opacity: 0.15; right: -10%; height: 75vh; }
+  /* Hide bottle in hero on mobile — shown in its own section below */
+  .hero-bottle { display: none; }
   .scroll-indicator { left: 1.5rem; }
   .heritage-grid,
   .process-inner,
