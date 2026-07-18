@@ -249,8 +249,7 @@ nav.scrolled {
 .hero {
   position: relative;
   height: 100vh;
-  /* iOS Safari 100vh fix */
-  min-height: 700px;
+  min-height: 600px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,11 +260,12 @@ nav.scrolled {
   background: #0D0A07;
   background: var(--dark);
 }
-/* iOS: fix 100vh including address bar */
-@supports (-webkit-touch-callout: none) {
+/* Modern browsers: use dynamic viewport height which accounts for
+   iOS Safari address bar appearing/disappearing */
+@supports (height: 100dvh) {
   .hero {
-    height: -webkit-fill-available;
-    min-height: -webkit-fill-available;
+    height: 100dvh;
+    min-height: 600px;
   }
 }
 .hero-bg {
@@ -804,8 +804,28 @@ footer {
     z-index: 200;
     gap: 0;
   }
-  .hero-content { max-width: 100%; padding: 0 1.5rem; padding-top: 6rem; }
-  .hero-bottle { opacity: 0.2; right: -5%; height: 80vh; }
+  .hero-content {
+    max-width: 100%;
+    padding: 0 1.5rem;
+    /* Push below fixed nav (approx 70px) without fighting flexbox centering */
+    margin-top: -4rem;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-title {
+    font-size: 2.6rem;
+    line-height: 1.05;
+  }
+  .hero-subtitle {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+  .hero-eyebrow { margin-bottom: 1.2rem; }
+  .hero-bottle { opacity: 0.15; right: -10%; height: 75vh; }
   .scroll-indicator { left: 1.5rem; }
   .heritage-grid,
   .process-inner,
@@ -825,7 +845,9 @@ footer {
   .stats-inner { -ms-grid-columns: 1fr 1fr; grid-template-columns: 1fr 1fr; }
   .tasting-wheel { -ms-grid-columns: 1fr 2px 1fr; grid-template-columns: 1fr 1fr; }
   .note-card:last-child { -ms-grid-column: 1; -ms-grid-column-span: 2; grid-column: 1 / -1; }
-  .hero-title { font-size: 2.8rem; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-desc { font-size: 0.95rem; }
+  .hero-eyebrow::before { display: none; } /* save space on tiny screens */
   .cuvee-specs { -ms-grid-columns: 1fr; grid-template-columns: 1fr; }
   .nav-links a { font-size: 0.85rem; }
 }
